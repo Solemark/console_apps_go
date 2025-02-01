@@ -1,4 +1,4 @@
-package console_apps_test
+package console_apps
 
 import (
 	"reflect"

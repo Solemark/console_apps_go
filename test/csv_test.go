@@ -4,7 +4,7 @@ import (
 	"encoding/csv"
 	"os"
 	"reflect"
-	console_apps "solemarc/go/console_apps/src"
+	ca "solemarc/go/console_apps/src"
 	"testing"
 )
 
@@ -15,7 +15,7 @@ func TestFileExists(t *testing.T) {
 		{"Hello World!", "1, 2, 3, 4, 5", "3rd Col. Data"},
 		{"How are you?", "5, 4, 3, 2, 1", "More random data"},
 	}
-	csv := console_apps.CSV{filename, data}
+	csv := ca.CSV{Filename: filename, Data: data}
 	csv.Write()
 	_, err := os.Stat(filename)
 	if err != nil {
@@ -31,7 +31,7 @@ func TestFileHasData(t *testing.T) {
 		{"Hello World!", "1, 2, 3, 4, 5", "3rd Col. Data"},
 		{"How are you?", "5, 4, 3, 2, 1", "More random data"},
 	}
-	c := console_apps.CSV{filename, data}
+	c := ca.CSV{Filename: filename, Data: data}
 	c.Write()
 	input, err := os.Open(filename)
 	if err != nil {
