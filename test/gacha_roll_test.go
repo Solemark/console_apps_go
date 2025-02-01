@@ -7,14 +7,16 @@ import (
 )
 
 func TestGachaRoll(t *testing.T) {
-	var data []string = []string{
-		"FGO", "AK", "GI",
+	data := []string{
+		"FGO", "AK", "GI", "unknown game",
 	}
 
-	for _, value := range data {
-		var expect string = ca.GachaRoll(value)
-		if !strings.Contains(expect, value) {
-			t.Errorf("Expected: %s\nRecieved: %s", expect, value)
+	for _, inp := range data {
+		res, e := ca.GachaRoll(inp)
+		if e != nil && res != "" {
+			t.Errorf("recieved error\nexpected: \"\"\nrecieved: %s", res)
+		} else if !strings.Contains(res, inp) && res != "" {
+			t.Errorf("Expected: %s\nRecieved: %s", inp, res)
 		}
 	}
 }

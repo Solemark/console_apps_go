@@ -7,10 +7,10 @@ import (
 )
 
 func TestMap(t *testing.T) {
-	expect := []int32{3, 6, 9}
-	result := ca.Map([]int32{1, 2, 3}, timesThree)
-	if !reflect.DeepEqual(expect, result) {
-		t.Error("Expected: ", expect, "\nRecieved: ", result)
+	exp := []int32{3, 6, 9}
+	res := ca.Map([]int32{1, 2, 3}, timesThree)
+	if !reflect.DeepEqual(exp, res) {
+		t.Error("Expected: ", exp, "\nRecieved: ", res)
 	}
 }
 

@@ -1,21 +1,22 @@
 package console_apps
 
-import "math"
+import (
+	"errors"
+	"math"
+)
 
-func GetArea[R Radius](radius R) R {
-	switch {
-	case radius > 0:
-		return math.Pi * (radius * radius)
-	default:
-		return 0
+func GetArea[R Radius](radius R) (R, error) {
+	if radius > 0 {
+		return (math.Pi * (radius * radius)), nil
+	} else {
+		return 0, errors.New("radius <= 0")
 	}
 }
 
-func GetCirc[R Radius](radius R) R {
-	switch {
-	case radius > 0:
-		return 2 * math.Pi * radius
-	default:
-		return 0
+func GetCirc[R Radius](radius R) (R, error) {
+	if radius > 0 {
+		return (2 * math.Pi * radius), nil
+	} else {
+		return 0, errors.New("radius <= 0")
 	}
 }

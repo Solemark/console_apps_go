@@ -7,35 +7,37 @@ import (
 )
 
 func TestCircleArea(t *testing.T) {
-	var radii []float64 = []float64{0.0, 1.0, 2.1, -3.2}
-	var expect float64
-	for _, radius := range radii {
-		if radius > 0 {
-			expect = math.Pi * (radius * radius)
+	for _, r := range []float64{0.0, 1.0, 2.1, -3.2} {
+		exp := 0.0
+		if r > 0 {
+			exp = math.Pi * (r * r)
 		} else {
-			expect = 0
+			exp = 0
 		}
-		answer := ca.GetArea(radius)
-
-		if expect != answer {
-			t.Errorf("Error! Expected: %g\nrecieved: %g", expect, answer)
+		res, e := ca.GetArea(r)
+		if e != nil && res != 0 {
+			t.Errorf("error thrown\nexpected: 0\nrecieved: %g", res)
+		}
+		if exp != res {
+			t.Errorf("Error! Expected: %g\nrecieved: %g", exp, res)
 		}
 	}
 }
 
 func TestCircleCirc(t *testing.T) {
-	var radii []float64 = []float64{0.0, 1.0, 2.1, -3.2}
-	var expect float64
-	for _, radius := range radii {
-		if radius > 0 {
-			expect = 2 * math.Pi * radius
+	for _, r := range []float64{0.0, 1.0, 2.1, -3.2} {
+		exp := 0.0
+		if r > 0 {
+			exp = 2 * math.Pi * r
 		} else {
-			expect = 0
+			exp = 0
 		}
-		answer := ca.GetCirc(radius)
-
-		if expect != answer {
-			t.Errorf("Error! Expected: %g\nrecieved: %g", expect, answer)
+		res, e := ca.GetCirc(r)
+		if e != nil && res != 0 {
+			t.Errorf("error thrown\nexpected: 0\nrecieved: %g", res)
+		}
+		if exp != res {
+			t.Errorf("Error! Expected: %g\nrecieved: %g", exp, res)
 		}
 	}
 }

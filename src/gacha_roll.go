@@ -1,20 +1,27 @@
 package console_apps
 
 import (
+	"errors"
 	"fmt"
 	"math/rand"
 )
 
-func GachaRoll(game string) string {
+const (
+	FGO = "FGO"
+	AK  = "AK"
+	GI  = "GI"
+)
+
+func GachaRoll(game string) (string, error) {
 	switch game {
-	case "FGO":
-		return roll(100, 300, 5, "FGO")
-	case "AK":
-		return roll(50, 100, 6, "AK")
-	case "GI":
-		return roll(60, 90, 5, "GI")
+	case FGO:
+		return roll(100, 300, 5, "FGO"), nil
+	case AK:
+		return roll(50, 100, 6, "AK"), nil
+	case GI:
+		return roll(60, 90, 5, "GI"), nil
 	default:
-		return "Error! Unknown game!"
+		return "", errors.New("unknown game")
 	}
 }
 

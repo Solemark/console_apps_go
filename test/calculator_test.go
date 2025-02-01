@@ -14,13 +14,11 @@ func getNumbers() [][]float32 {
 }
 
 func TestAddition(t *testing.T) {
-	var numbers [][]float32 = getNumbers()
-	var expect float32
-	var result float32
+	numbers := getNumbers()
 
 	for _, item := range numbers {
-		expect = item[0] + item[1]
-		result = ca.Add(item[0], item[1])
+		expect := item[0] + item[1]
+		result := ca.Add(item[0], item[1])
 
 		if expect != result {
 			t.Fatalf("expected: %f\n recieved: %f", expect, result)
@@ -29,13 +27,11 @@ func TestAddition(t *testing.T) {
 }
 
 func TestSubtraction(t *testing.T) {
-	var numbers [][]float32 = getNumbers()
-	var expect float32
-	var result float32
+	numbers := getNumbers()
 
 	for _, item := range numbers {
-		expect = item[0] - item[1]
-		result = ca.Sub(item[0], item[1])
+		expect := item[0] - item[1]
+		result := ca.Sub(item[0], item[1])
 
 		if expect != result {
 			t.Fatalf("expected: %f\n recieved: %f", expect, result)
@@ -44,13 +40,11 @@ func TestSubtraction(t *testing.T) {
 }
 
 func TestMultiplication(t *testing.T) {
-	var numbers [][]float32 = getNumbers()
-	var expect float32
-	var result float32
+	numbers := getNumbers()
 
 	for _, item := range numbers {
-		expect = item[0] * item[1]
-		result = ca.Mul(item[0], item[1])
+		expect := item[0] * item[1]
+		result := ca.Mul(item[0], item[1])
 
 		if expect != result {
 			t.Fatalf("expected: %f\n recieved: %f", expect, result)
@@ -59,13 +53,11 @@ func TestMultiplication(t *testing.T) {
 }
 
 func TestDivision(t *testing.T) {
-	var numbers [][]float32 = getNumbers()
-	var expect float32
-	var result float32
+	numbers := getNumbers()
 
 	for _, item := range numbers {
-		expect = item[0] / item[1]
-		result = ca.Div(item[0], item[1])
+		expect := item[0] / item[1]
+		result := ca.Div(item[0], item[1])
 
 		if expect != result {
 			t.Fatalf("expected: %f\n recieved: %f", expect, result)
