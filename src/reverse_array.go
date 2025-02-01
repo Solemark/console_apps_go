@@ -1,6 +1,6 @@
 package console_apps
 
-func reverseArray(arr []int) []int {
+func ReverseArray(arr []int) []int {
 	x := 0
 	y := 0
 	c := len(arr) - 1

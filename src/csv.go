@@ -7,21 +7,21 @@ import (
 )
 
 type CSV struct {
-	filename string
-	data     [][]string
+	Filename string
+	Data     [][]string
 }
 
-func (c CSV) write() {
-	file, err := os.Create(c.filename)
+func (c CSV) Write() {
+	file, err := os.Create(c.Filename)
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer file.Close()
 	writer := csv.NewWriter(file)
 	defer writer.Flush()
-	writer.WriteAll(c.data)
+	writer.WriteAll(c.Data)
 }
 
-func (c CSV) destroy() {
-	os.Remove(c.filename)
+func (c CSV) Destroy() {
+	os.Remove(c.Filename)
 }

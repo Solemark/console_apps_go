@@ -1,7 +1,8 @@
-package console_apps
+package console_apps_test
 
 import (
 	"math"
+	ca "solemarc/go/console_apps/src"
 	"testing"
 )
 
@@ -14,7 +15,7 @@ func TestCircleArea(t *testing.T) {
 		} else {
 			expect = 0
 		}
-		answer := getArea(radius)
+		answer := ca.GetArea(radius)
 
 		if expect != answer {
 			t.Errorf("Error! Expected: %g\nrecieved: %g", expect, answer)
@@ -31,7 +32,7 @@ func TestCircleCirc(t *testing.T) {
 		} else {
 			expect = 0
 		}
-		answer := getCirc(radius)
+		answer := ca.GetCirc(radius)
 
 		if expect != answer {
 			t.Errorf("Error! Expected: %g\nrecieved: %g", expect, answer)

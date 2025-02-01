@@ -2,7 +2,7 @@ package console_apps
 
 import "math"
 
-func getArea[R Radius](radius R) R {
+func GetArea[R Radius](radius R) R {
 	switch {
 	case radius > 0:
 		return math.Pi * (radius * radius)
@@ -11,7 +11,7 @@ func getArea[R Radius](radius R) R {
 	}
 }
 
-func getCirc[R Radius](radius R) R {
+func GetCirc[R Radius](radius R) R {
 	switch {
 	case radius > 0:
 		return 2 * math.Pi * radius

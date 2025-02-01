@@ -7,7 +7,3 @@ func Map[N Number](input []N, mapFunc func(N) N) []N {
 	}
 	return output
 }
-
-func timesThree[N Number](x N) N {
-	return x * 3
-}

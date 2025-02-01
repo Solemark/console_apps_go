@@ -1,10 +1,13 @@
-package console_apps
+package console_apps_test
 
-import "testing"
+import (
+	ca "solemarc/go/console_apps/src"
+	"testing"
+)
 
 func TestDatetime(t *testing.T) {
 	expect := "the date is Friday the 26th of May 2023"
-	answer := checkDate()
+	answer := ca.CheckDate()
 
 	if expect != answer {
 		t.Errorf("expected: %s\n recieved: %s", expect, answer)

@@ -4,7 +4,7 @@ import (
 	"sort"
 )
 
-func numericalSort(data []int) []int {
+func NumericalSort(data []int) []int {
 	sort.Ints(data)
 	return data
 }

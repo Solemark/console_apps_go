@@ -5,7 +5,7 @@ import (
 	"time"
 )
 
-func checkDate() string {
+func CheckDate() string {
 	datetime := time.Now().Local()
 	day := datetime.Weekday().String()
 	date := datetime.Day()

@@ -1,7 +1,8 @@
-package console_apps
+package console_apps_test
 
 import (
 	"reflect"
+	ca "solemarc/go/console_apps/src"
 	"testing"
 )
 
@@ -14,7 +15,7 @@ func TestMultiplicationTables(t *testing.T) {
 	keys := []int{1, 12}
 
 	for key, row := range data {
-		result := multiplicationTables(keys[key], max)
+		result := ca.MultiplicationTables(keys[key], max)
 		if !reflect.DeepEqual(row, result) {
 			t.Fatalf("Expected: %s\n Recieved: %s", row, result)
 		}
